@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import ThemeProvider from './assets/context/ThemeSwitcher'
@@ -12,16 +12,16 @@ const App = () => {
   return (
     <ThemeProvider>
     <ThemeWrapper>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='/country/:countryId' element={<CountryDetails />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ThemeWrapper>
-  </ThemeProvider>
+    </ThemeProvider>
   )
 }
 
